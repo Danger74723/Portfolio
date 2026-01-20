@@ -1,0 +1,463 @@
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    color: #ededed;
+    background-color: rgba(4, 2, 41, 0.97) ;
+}
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    position: relative;
+    font-size: 45px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+   animation: slideRight 1s ease forwards;
+    
+}
+.navbar a{
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.navbar a:hover{
+    color: rgba(52, 212, 237, 0.838);
+}
+.home{
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: rgba(4, 2, 41, 0.97);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+.home-content{
+    max-width: 600px;
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slidebottom 1s ease forwards;
+    animation-delay: .7s;
+}
+.home-content h1{
+    font-size: 50px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-content p{
+    font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-content h3 span{
+    color: #0ef;
+}
+.pic{
+    height: 450px;
+    width: 450px;
+    background-color: aqua;
+    border-radius: 150%;
+    background-image: url("bipad.jpg");
+    background-size:cover;
+    position: absolute;
+    border: 3px solid #fff;
+   top: 140px;
+   left: 880px;
+   box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px rgba(213, 200, 19, 0.826),
+    0 0 100px cyan, 0 0 200px rgba(213, 200, 19, 0.826);
+}
+.home-sci a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    background-color: rgba(4, 2, 41, 0.97);
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+
+    transition: .5s;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s  * var(--i));
+    margin: 30px 15px 30px 0;
+}
+.home-sci img{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px ;
+}
+.home-sci a:hover{
+    background: #0ef;
+    color: #001b29;
+    box-shadow: 0 0 20px #0ef;
+}
+.btn-box{
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #001b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1s;
+    box-shadow: 0 0 5px #0ef,
+    0 0 25px #0ef;
+}
+.btn-box:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px cyan, 0 0 200px cyan;
+}
+
+
+.about{
+    background-color:  rgba(4, 2, 41, 0.97);
+    min-height: 600px;
+}
+.about-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 380px;
+    width: 380px;
+    gap: 2rem;
+    padding-bottom: 6rem;
+    color: black;
+    position: absolute; 
+    top: 800px;
+    left: 850px;
+    background-color:  rgba(4, 2, 41, 0.97);
+    color: #fff;
+}
+.about-text p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slidebottom {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.about-img{
+    height: 350px;
+    width: 350px;
+    background-color: aqua;
+    border-radius: 150%;
+    background-image: url(bipad.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 750px;
+    left: 150px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px rgba(213, 200, 19, 0.826),
+    0 0 100px cyan, 0 0 150px rgba(213, 200, 19, 0.826);
+}
+.about-p{
+    background-color:  rgba(4, 2, 41, 0.97);
+    height: 500px;
+}
+.about-text span{
+    font-size: 40px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+.about-text h2{
+    font-size: 40px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sub-title{
+   
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+    padding-top: 30px;
+}
+.sub-title span{
+    color: cyan;
+
+}
+.container1{
+    /* width: 700px; */
+    height: 850px;
+    padding: 75px 90px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+   
+}
+
+.heading{
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness:5px ;
+    margin-bottom: 50px;
+}
+.heading1{
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness:5px ;
+    margin-bottom: 50px;
+}
+
+
+/* Technical Skills */
+.container-2{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.container-2 .card{
+    position: relative;
+    width: 220px;
+    height:250px;
+    /* background: #2a2a2a; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-2 .card .percent{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    
+}
+.container-2 .card .percent svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+.container-2 .card .percent svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 2;
+    stroke: #191919;
+    transform: translate(5px,5px);
+}
+.container-2 .card .percent svg circle:nth-child(2){
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440*var(--num))/100);
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2s;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.dot{
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+    
+    animation: animateDot 2s linear forwards;
+}
+@keyframes animateDot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(calc(3.6deg * var(--num)));
+    }
+}
+.dot::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
+}
+.number{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2s;
+}
+.number h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+.number h2 span{
+    font-weight: 300;
+    color: #fff;
+    font-size: 0.5em;
+}
+.number p{
+    font-weight: 300;
+    font-size: 0.75em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+}
+ /* project Section */
+
+ .projects {
+    background: rgba(4, 2, 41, 0.97);
+    height: 700px;
+}
+.projects .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.projects .card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+.projects .card:hover {
+    transform: translateY(-5px);
+}
+.projects img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.projects .card-content {
+    padding: 20px;
+}
+.projects .card-content h3 {
+    margin-bottom: 10px;
+}
+.projects .card-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.projects .card-content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #04fc43;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
